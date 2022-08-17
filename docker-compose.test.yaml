@@ -1,0 +1,17 @@
+version: '3.8'
+
+# This override file should be used when running automated tests so
+# that test output is saved to the host
+
+services:
+  hapi-template:
+    build:
+      target: development
+    image: hapi-template-development
+    container_name: hapi-template-test
+    command: npm run test
+    volumes:
+      - ./app:/home/node/app
+      - ./test:/home/node/test
+      - ./test-output:/home/node/test-output
+      - ./package.json:/home/node/package.json
