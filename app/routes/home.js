@@ -17,7 +17,7 @@ module.exports = [{
       }),
       failAction: async (request, h, error) => {
         console.log(error)
-        return 'email is required'
+        return h.response('email is required').takeover()
       }
     }
   },
