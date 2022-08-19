@@ -1,3 +1,5 @@
+const Joi = require('joi')
+
 module.exports = [{
   method: 'GET',
   path: '/',
@@ -10,8 +12,12 @@ module.exports = [{
   path: '/',
   options: {
     validate: {
+      payload: Joi.object({
+        email: Joi.string().required()
+      }),
       failAction: async (request, h, error) => {
         console.log(error)
+        return 'email is required'
       }
     }
   },
