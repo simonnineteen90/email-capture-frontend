@@ -1,4 +1,5 @@
 const Joi = require('joi')
+const sendToTopic = require('../messaging')
 
 module.exports = [{
   method: 'GET',
@@ -24,6 +25,8 @@ module.exports = [{
   handler: (request, h) => {
     console.log('test')
     const emailAddress = request.payload.email
+    const emailAddressArray = [{ body: emailAddress }]
+    sendToTopic(emailAddressArray)
     return `You signed up with: ${emailAddress}`
   }
 }]
