@@ -1,4 +1,5 @@
 const Joi = require('joi')
+const createMessageArray = require('../create-message-array')
 const sendToTopic = require('../messaging')
 
 module.exports = [{
@@ -14,7 +15,9 @@ module.exports = [{
   options: {
     validate: {
       payload: Joi.object({
-        email: Joi.string().required()
+        email: Joi.string().required(),
+        firstName: Joi.string().required(),
+        lastName: Joi.string().required()
       }),
       failAction: async (request, h, error) => {
         console.log(error)
@@ -23,10 +26,9 @@ module.exports = [{
     }
   },
   handler: (request, h) => {
-    console.log('test')
-    const emailAddress = request.payload.email
-    const emailAddressArray = [{ body: emailAddress }]
-    sendToTopic(emailAddressArray)
-    return `You signed up with: ${emailAddress}`
+    // create messge array?
+    const messageArray = createMessageArray(request)
+    sendToTopic(messageArray)
+    return `Welcome ${request.payload.firstName} ${request.payload.lastName} You signed up with: ${request.payload.email}`
   }
 }]
