@@ -1,1 +1,24 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
 
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #004643;
+}  
+
+.form-container {
+  background: #FDFBED;
+  padding: 30px;
+  border-radius: 10px;
+  height: 50%;
+}
+
+.form-container h1 {
+  font-family: 'DM Serif Display', serif;
+}
