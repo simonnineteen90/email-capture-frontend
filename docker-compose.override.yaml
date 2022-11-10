@@ -7,10 +7,10 @@ services:
   hapi-template:
     build:
       target: development
-    image: hapi-template-development
-    container_name: hapi-template-development
+    image: email-capture-frontend
+    container_name: email-capture-frontend
     ports:
-      - "3000:3000"
+      - "3001:3000"
       - "9229:9229"
     volumes:
       - ./app:/home/node/app

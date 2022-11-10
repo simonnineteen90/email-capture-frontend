@@ -1,0 +1,7 @@
+replicaCount: 1
+image:
+  repository: simondunn/email-capture-frontend:latest
+  pullPolicy: Always
+  tag: ""
+
+  # update templates to use values from this file

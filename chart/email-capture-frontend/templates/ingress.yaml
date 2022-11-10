@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ec-ingress
+spec:
+  rules:
+  - host: frontend.docker.local
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: ec-frontend
+            port: 
+              number: 3000

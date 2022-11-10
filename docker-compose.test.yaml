@@ -7,8 +7,8 @@ services:
   hapi-template:
     build:
       target: development
-    image: hapi-template-development
-    container_name: hapi-template-test
+    image: email-capture-frontend
+    container_name: email-capture-frontend-test
     command: npm run test
     volumes:
       - ./app:/home/node/app

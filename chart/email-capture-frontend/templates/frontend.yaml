@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ec-frontend
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: ec-frontend 
+  template:
+    metadata:
+      labels:
+        app: ec-frontend
+    spec:
+      containers:
+      - image: {{ .Values.image.repository }}
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        name: email-capture-frontend
+        ports:
+        - name: ec-frontend
+          containerPort: 3000
+
