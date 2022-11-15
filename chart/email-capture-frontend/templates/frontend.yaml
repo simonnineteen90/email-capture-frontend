@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ec-frontend
+  name: {{ .Release.Name }}
 spec:
-  replicas: {{ .Values.replicaCount }}
+  replicas: {{ .Values.spec.replicaCount }}
   selector:
     matchLabels:
-      app: ec-frontend 
+      app: {{ .Values.service.name | default .Chart.Name }} 
   template:
     metadata:
       labels:
-        app: ec-frontend
+        app: {{ .Values.service.name | default .Chart.Name }}
     spec:
       containers:
-      - image: {{ .Values.image.repository }}
-        imagePullPolicy: {{ .Values.image.pullPolicy }}
-        name: email-capture-frontend
+      - image: {{ .Values.containers.repository }}:{{ .Values.containers.tag }}
+        imagePullPolicy: {{ .Values.containers.pullPolicy }}
+        name: {{ .Values.containers.name }}
         ports:
-        - name: ec-frontend
-          containerPort: 3000
+        - name: {{ .Values.service.name | default .Chart.Name }}
+          containerPort: {{ .Values.containers.containerPort }}
 

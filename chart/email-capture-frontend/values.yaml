@@ -1,7 +1,23 @@
-replicaCount: 1
-image:
-  repository: simondunn/email-capture-frontend:latest
+spec:
+  replicaCount: 1
+
+containers:
+  repository: simondunn/email-capture-frontend
+  tag: 1.1
   pullPolicy: Always
-  tag: ""
+  name: email-capture-frontend
+  containerPort: 3000
+
+dataValueOne: one
+
+service:
+  protocol: TCP
+  port: 3000
+  targetPort: 3000
+
+ingress:
+  name: ec-ingress
+  host: frontend.docker.local  
+  port: 3000
 
   # update templates to use values from this file
