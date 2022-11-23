@@ -9,3 +9,4 @@ Dockerfile
 npm-debug.log
 azure-pipelines.yaml
 jsconfig.json
+.env
