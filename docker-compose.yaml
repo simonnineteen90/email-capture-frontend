@@ -4,3 +4,7 @@ services:
     build: .
     image: hapi-template
     container_name: hapi-template
+    environment:
+      CONNECTION_STRING: ${CONNECTION_STRING}
+      TOPIC_NAME: ${TOPIC_NAME}
+      SUBSCRIPTION_NAME: ${SUBSCRIPTION_NAME}
