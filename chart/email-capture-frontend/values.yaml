@@ -3,7 +3,7 @@ spec:
 
 containers:
   repository: simondunn/email-capture-frontend
-  tag: 1.1
+  tag: 1.2
   pullPolicy: Always
   name: email-capture-frontend
   containerPort: 3000

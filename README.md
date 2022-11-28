@@ -1,5 +1,5 @@
-# Hapi Template
-Quick start new Node.js project using Hapi.js.
+# Email Capture Frontend
+Frontend service of an app to capture email addresses and send a welcome email.
 
 ## Prerequisites
 
