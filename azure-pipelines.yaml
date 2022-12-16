@@ -9,8 +9,13 @@ pool:
 steps:
 - task: Docker@2
   inputs:
-    command: 'build'
+    containerRegistry: 'docker hub'
+    repository: 'simondunn/email-capture-frontend'
+    command: 'buildAndPush'
     Dockerfile: 'Dockerfile'
+    tags: |
+      $(Build.BuildId)
+      latest
 
 - task: HelmInstaller@0
   inputs:
@@ -28,3 +33,4 @@ steps:
     chartType: 'FilePath'
     chartPath: 'chart/email-capture-frontend'
     releaseName: 'ec-frontend'
+    arguments: '--set containers.tag=$(Build.BuildId)'
