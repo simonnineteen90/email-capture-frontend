@@ -27,4 +27,4 @@ steps:
     command: 'upgrade'
     chartType: 'FilePath'
     chartPath: 'chart/email-capture-frontend'
-    releaseName: 'email-capture-frontend'
+    releaseName: 'ec-frontend'
