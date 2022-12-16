@@ -1,0 +1,13 @@
+trigger: # will build on any PR
+- main
+
+pr: none
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: Docker@2
+  inputs:
+    command: 'build'
+    Dockerfile: 'Dockerfile'
