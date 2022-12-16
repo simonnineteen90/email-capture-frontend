@@ -1,3 +1,6 @@
+variables:
+- group: ec-frontend
+
 trigger: # will build on any PR
 - main
 
@@ -33,4 +36,4 @@ steps:
     chartType: 'FilePath'
     chartPath: 'chart/email-capture-frontend'
     releaseName: 'ec-frontend'
-    arguments: '--set containers.tag=$(Build.BuildId)'
+    arguments: --set containers.tag=$(Build.BuildId),env.connectionString=$(ecConString),env.topicName=$(ecTopicName),env.subscriptionName=$(ecSubName)
