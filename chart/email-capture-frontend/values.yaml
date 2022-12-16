@@ -20,4 +20,10 @@ ingress:
   host: frontend.docker.local  
   port: 80
 
+env:
+  connectionString: connectionString
+  topicName: topicName
+  subscriptionName: subscriptionName
+
+
   # update templates to use values from this file
