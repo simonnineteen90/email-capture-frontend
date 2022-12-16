@@ -28,4 +28,3 @@ steps:
     chartType: 'FilePath'
     chartPath: 'chart/email-capture-frontend'
     releaseName: 'email-capture-frontend'
-    recreate: true
