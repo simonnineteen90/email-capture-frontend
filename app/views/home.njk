@@ -1,17 +1,17 @@
 {% extends '_layout.njk' %}
 
 {% block content %}
-<div class="container">
-  <div class="form-container">
+<div>
+  <div>
     <h1>Subscribe to the newsletter</h1>
     <form action="/" method="post" novalidate="">
-        <div class="input-container">
+        <div>
           <input type="email" name="email" size="30" placeholder="Homer.Simpson@myemail.co.uk" required>
         </div>
-        <div class="input-container">
+        <div>
           <input type="string" name="firstName" size="30" placeholder="Homer" required>
         </div>
-        <div class="input-container">
+        <div>
           <input type="string" name="lastName" size="30" placeholder="Simpson" required>
           <input type="hidden" name="crumb" value="{{crumb}}"/>
         </div>

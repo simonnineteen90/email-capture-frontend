@@ -9,49 +9,5 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #004643;
+  flex-direction: column;
 }  
-
-.form-container {
-  background: #FDFBED;
-  padding: 30px;
-  border-radius: 10px;
-  height: 50%;
-  width: 60%;
-}
-
-.form-container h1 {
-  font-family: 'DM Serif Display', serif;
-}
-
-.input-container input {
-    border-top-style: hidden;
-    border-right-style: hidden;
-    border-left-style: hidden;
-    border-bottom-style: hidden;
-    background-color: #FDFBED;
-    margin-bottom: 20px;
-    width: 100%;
-    height: 24px;
-    font-size: 1.1rem;
-  }
-
-  .input-container input:focus {
-    outline:none;
-  }
-
-  .input-container input:hover::after {
-    content: '';
-    position: absolute;
-    margin: -18px 0 0 2px;
-    border: solid red 1px;
-    width: 545px;
-  }
-
-  .input-container::after {
-    content: '';
-    position: absolute;
-    margin: -18px 0 0 2px;
-    border: solid rgb(85, 85, 85) 1px;
-    width: 545px;
-  }
